@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --cor_primaria: #FF9B9B; /* Pink/Accent */
+    --cor_secundaria: #FFEBD4; /* Cream/Background */
+
+    /* Variáveis genéricas unificadas com as primárias */
+    --accent: var(--cor_primaria);
+    --muted: var(--cor_primaria); /* Usado para cor do texto */
+    --cor_blockquote_bg: #ff9b9b2d; /* Primary com transparência */
+
+    --fonte_primaria: "Krona One", sans-serif;
+    --fonte_secundaria: "Roboto", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Adicionado para melhor layout */
+}
+
+body{
+    width: 100%;
+    height: auto;
+    background: var(--cor_secundaria); /* Garante que o fundo cubra tudo */
+}
+
+/* --- Estilos Gerais de Tipografia (Adaptados do final) --- */
+h1 {
+    color: var(--accent);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+p {
+    line-height: 1.6;
+    margin: 16px 0;
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-family: var(--fonte_secundaria);
+    font-weight: 400;
+}
+strong {
+    color: var(--accent);
+}
+
+/* --- Estilos do Cabeçalho --- */
+.cabecalho{
+    background: var(--cor_primaria);
+    padding: 30px;
+}
+
+.menu{
+    display: flex;
+    gap: 60px;
+    margin-left: 10rem;
+}
+
+.link_menu{
+    font-family: var(--fonte_primaria);
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--cor_secundaria);
+    transition: color 0.3s;
+}
+
+.link_menu:hover {
+    color: white;
+}
+
+/* --- Estilos do Conteúdo Principal --- */
+.conteudo{
+    padding: 2% 8%;
+}
+
+.conteudo_home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo{
+    font-family: var(--fonte_primaria);
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--cor_primaria);
+    width: 50%;
+}
+
+.conteudo_home_imagem{
+    width: 45%;
+}
+
+/* --- Estilos da Carta --- */
+.conteudo_carta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    margin-top: 60px;
+}
+
+.titulo_link{
+    font-family: var(--fonte_primaria);
+    font-weight: 700;
+    font-size: 47px;
+    color: var(--cor_primaria);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.titulo_link:hover {
+    color: var(--accent);
+}
+
+.texto_carta { /* Nova classe para o container de texto */
+    font-size: 20px;
+    line-height: 30px;
+    word-spacing: 4px;
+    max-width: 1300;
+}
+
+/* Estilo do Blockquote (Citação) */
+blockquote {
+    margin: 24px auto;
+    padding: 18px 22px;
+    background: var(--cor_blockquote_bg);
+    border-left: 5px solid var(--accent);
+    border-radius: 8px;
+    font-style: italic;
+    color: var(--muted);
+    max-width: 600px;
+    font-family: var(--fonte_secundaria);
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+
+/* --- Estilos das Fotos --- */
+.conteudo_fotos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    gap: 45px;
+}
+
+.container_imagem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza as imagens */
+    gap: 35px;
+    max-width: 1200px;
+}
+
+.imagem_foto{
+    width: 30%;
+    min-width: 250px; /* Garante que não fiquem muito pequenas */
+    margin-bottom: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.imagem_foto:hover {
+    transform: scale(1.05);
+}
+
+/* --- Estilos do Rodapé --- */
+.rodape{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: var(--cor_primaria);
+    color: var(--cor_secundaria);
+}
+
+.texto_rodape{
+    
+    color: white;
+    font-family: var(--fonte_secundaria);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+/* --- Media Queries (Responsividade) --- */
+@media (max-width: 1024px) {
+    .menu {
+        margin-left: 5rem;
+    }
+    .titulo {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 790px){
+    .cabecalho {
+        padding: 20px;
+    }
+    .menu{
+        margin-left: 0px;
+        justify-content: center;
+    }
+    .link_menu{
+        font-size: 15px;
+    }
+    .conteudo_home {
+        flex-direction: column;
+        text-align: center;
+    }
+    .titulo{
+        width: 100%;
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+    .conteudo_home_imagem {
+        width: 80%;
+    }
+    .titulo_link{
+        font-size: 35px;
+    }
+    .container_imagem{
+        gap: 25px;
+    }
+    .imagem_foto {
+        width: 45%;
+    }
+}
+
+@media (max-width: 580px){
+    .link_menu {
+        font-size: 14px;
+        gap: 20px;
+    }
+    .titulo{
+        font-size: 26px;
+    }
+    .titulo_link{
+        font-size: 28px;
+    }
+    .texto_rodape{
+        font-size: 15px;
+    }
+    .imagem_foto {
+        width: 90%;
+        min-width: 0;
+    }
+    .container_imagem {
+        flex-direction: column;
+        align-items: center;
+    }
+}
