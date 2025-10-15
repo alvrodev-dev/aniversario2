@@ -9,3 +9,4 @@ Este projeto é uma Landing Page de Feliz Aniversário, desenvolvida inteirament
 - Este projeto me permitiu aprofundar meus conhecimentos sobre o desenvolvimento de páginas web simples, porém visualmente agradáveis.
 
 ![image_page.png](image_page.png)
+# giovanna
